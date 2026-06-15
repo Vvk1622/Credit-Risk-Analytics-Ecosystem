@@ -1,0 +1,76 @@
+# Credit Risk Data Mart Design
+
+## Architecture Type
+Star Schema (Banking Standard)
+
+---
+
+## Fact Table
+
+### fact_loan_performance
+One row = One loan transaction
+
+- LoanID (Primary Key)
+- CustomerID (Foreign Key)
+- EmploymentID (Foreign Key)
+- EducationID (Foreign Key)
+- PurposeID (Foreign Key)
+
+- LoanAmount
+- InterestRate
+- LoanTerm
+- CreditScore
+- Income
+- DTIRatio
+- Default (Target Variable)
+
+---
+
+## Dimension Tables
+
+### dim_customer
+- CustomerID (Primary Key)
+- Age
+- MaritalStatus
+- HasDependents
+- HasMortgage
+
+---
+
+### dim_employment
+- EmploymentID (Primary Key)
+- EmploymentType
+- MonthsEmployed
+- EmploymentBand
+
+---
+
+### dim_education
+- EducationID (Primary Key)
+- EducationLevel
+
+---
+
+### dim_loan_purpose
+- PurposeID (Primary Key)
+- LoanPurpose
+
+---
+
+## Business Use Cases
+
+- Credit Risk Dashboard (Power BI)
+- Loan Default Analysis
+- Customer Risk Segmentation
+- Portfolio Risk Monitoring
+
+---
+
+## Insight Capability
+
+This structure allows analysis by:
+- Income
+- Employment Type
+- Education Level
+- Loan Purpose
+- Risk Category
